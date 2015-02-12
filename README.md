@@ -39,7 +39,7 @@ Fire up sufia-ansible-vagrant:
 vagrant up
 ```
 
-> ```vagrant up``` will take some time to complete the first time you launch it -- **no, really, maybe grab a cup of coffee and wait for this to complete!** This step downloads the vagrant box, installs system packages, downloads and installs FITS for file characterization, installs the Ruby dependencies, builds a relational database, and starts Fedora Commons, Solr, and Redis.
+> ```vagrant up``` will take some time to complete the first time you launch it -- **no, really, maybe grab a cup of coffee and wait for this to complete!** This step downloads the vagrant box, installs system packages, downloads and installs FITS for file characterization, installs the Ruby dependencies, builds a relational database, and starts Fedora Commons, Solr, and Redis. In a test on a MacBook Pro connected to campus wifi it took 87 minutes to bring up the box for the first time.
 
 Finally, browse to ```http://192.168.33.10``` and you should see the Sufia homepage, at which point you can sign up for an account, upload some files, and cruise around..
 
