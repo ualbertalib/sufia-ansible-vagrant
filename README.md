@@ -1,20 +1,20 @@
 # README
 
-Sufia-vagrant is a turnkey Hydra-based repository application that builds atop Sufia, providing [self-deposit functionality and more](https://github.com/projecthydra/sufia#what-is-sufia). It runs in a virtual machine powered by Vagrant and VirtualBox.
+Sufia-ansible-vagrant is a turnkey Hydra-based repository application that builds atop Sufia, providing [self-deposit functionality and more](https://github.com/projecthydra/sufia#what-is-sufia). It runs in a virtual machine powered by Vagrant and VirtualBox running Centos 6.5.
 
 This playbook installs [HydraNorth](https://github.com/ualbertalib/HydraNorth) but can be replaced by any Hydra-based application.  Consider starting your own using the instructions in the [Sufia README](https://github.com/projecthydra/sufia)
 
 ## Getting Started
 
-First install all of the dependencies (Git, VirtualBox, Vagrant), then run sufia-vagrant.
+First install all of the dependencies (Git, VirtualBox, Vagrant), then run sufia-ansible-vagrant.
 
 ### Install Git
 
-To grab a copy of sufia-vagrant, which is hosted on github.com, you'll need git, the distributed version control system.  Here are [instructions on installing git](http://git-scm.com/book/en/Getting-Started-Installing-Git).
+To grab a copy of sufia-ansible-vagrant, which is hosted on github.com, you'll need git, the distributed version control system.  Here are [instructions on installing git](http://git-scm.com/book/en/Getting-Started-Installing-Git).
 
 ### Install VirtualBox
 
-You will also need VirtualBox installed to run the virtual machine that runs sufia-vagrant. Download packages and installation instructions can be found at https://www.virtualbox.org/wiki/Downloads.
+You will also need VirtualBox installed to run the virtual machine that runs sufia-ansible-vagrant. Download packages and installation instructions can be found at https://www.virtualbox.org/wiki/Downloads.
 
 ### Install Vagrant
 
@@ -24,16 +24,16 @@ If you don't have Vagrant installed, here's how to remedy that:
   * Mac: With homebrew ```brew tap phinze/cask; brew install brew-cask; brew cask install vagrant``` _or_ follow the installation instructions on Vagrant's [downloads page](https://www.vagrantup.com/downloads).
   * Linux: use your favorite package manager to install packages for vagrant.
 
-### Run sufia-vagrant
+### Run sufia-ansible-vagrant
 
-Pull down a copy of sufia-vagrant and change into its directory:
+Pull down a copy of sufia-ansible-vagrant and change into its directory:
 
 ```bash
-$ git clone https://github.com/ualbertalib/sufia-vagrant
-$ cd sufia-vagrant
+$ git clone https://github.com/ualbertalib/sufia-ansible-vagrant
+$ cd sufia-ansible-vagrant
 ```
 
-Fire up sufia-vagrant:
+Fire up sufia-ansible-vagrant:
 
 ```bash
 vagrant up
@@ -51,7 +51,7 @@ Note: It may take a few moments for the included Fedora Commons and Solr instanc
 
 ## Shutting down
 
-When you are done, you can shut down sufia-vagrant with:
+When you are done, you can shut down sufia-ansible-vagrant with:
 
 ```bash
 vagrant halt
@@ -61,15 +61,15 @@ If you'd like to set up your own environment (e.g., on a development server), se
 
 ## Getting help
 
-There are numerous ways to get help.  You can reach the folks who work on Hydra and sufia-vagrant here:
+There are numerous ways to get help.  You can reach the folks who work on Hydra and sufia-ansible-vagrant here:
 
  * [hydra-tech Google Group](http://groups.google.com/group/hydra-tech)
- * [sufia-vagrant GitHub repository](https://github.com/ualbertalib/sufia-vagrant/issues)
+ * [sufia-ansible-vagrant GitHub repository](https://github.com/ualbertalib/sufia-ansible-vagrant/issues)
  * [#projecthydra IRC channel](irc://irc.freenode.net/projecthydra)
 
 ## Digging deeper
 
-You now have a working sandbox to try out Hydra and Sufia, and a perfectly good development environment to boot.  Here's how to dig deeper. Start by connecting to the virtual machine and changing into the directory that contains the sufia-vagrant code:
+You now have a working sandbox to try out Hydra and Sufia, and a perfectly good development environment to boot.  Here's how to dig deeper. Start by connecting to the virtual machine and changing into the directory that contains the sufia-ansible-vagrant code:
 
 ```bash
 vagrant ssh
