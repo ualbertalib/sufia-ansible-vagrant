@@ -1,0 +1,13 @@
+  - name: install software
+    yum: pkg={{ item}} state=latest
+    with_items: 
+      - fontconfig 
+      - freetype
+
+  - name: unpack phantomjs 
+    unarchive: src=phantomjs-1.9.8-linux-x86_64.tar.bz2 dest=/usr/src/ 
+
+
+  - name: move server and client
+    file: state=link src=/usr/src/phantomjs-1.9.8-linux-x86_64/bin/phantomjs dest=/usr/bin/phantomjs 
+

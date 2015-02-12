@@ -1,0 +1,15 @@
+---
+# This is the primary task list for the httpd role
+
+  # common dependencies  
+  - name: yum basic install software stack
+    yum: pkg={{ item }} state=installed
+    with_items:
+      - httpd
+      - mod_security
+      - mod_ssl
+      
+  - name: Enable startup of Apache httpd at boot time
+    service: name=httpd enabled=yes
+    notify: restart httpd
+

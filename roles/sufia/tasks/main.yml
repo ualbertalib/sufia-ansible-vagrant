@@ -1,0 +1,37 @@
+  - name: clean cache
+    command: yum clean metadata
+
+  # Software package block
+
+  - name: Install java -- otherwise flawed ibm java installed with libreoffice
+    yum: name=java-1.7.0-openjdk state=latest
+
+  - name: Install prerequisite software
+    yum: pkg={{ item}} state=latest
+    with_items:
+      - ruby 
+      - ImageMagick-devel
+      - clamav
+      - nodejs
+      - poppler-utils
+      - libreoffice-headless 
+      - libreoffice
+      - GraphicsMagick
+
+  - name: Install bundler
+    gem: name=bundler state=latest user_install=no
+
+  - include: application.yml
+
+  - name: give your system access to fits
+    lineinfile:
+      dest: '{{ APP_PATH }}/config/initializers/sufia.rb'
+      insertafter: '^  # config.fits_path = \"fits.sh\"'
+      line: '   config.fits_path = "fits"'
+
+  - include: database.yml
+    tags: "database"
+
+  - include: httpd.yml
+    tags: "httpd"
+

@@ -1,0 +1,5 @@
+LoadModule passenger_module {{ gemdir }}/gems/passenger-{{ version }}/buildout/apache2/mod_passenger.so
+<IfModule mod_passenger.c>
+  PassengerRoot {{ gemdir }}/gems/passenger-{{ version }}
+  PassengerDefaultRuby /usr/bin/ruby
+</IfModule>

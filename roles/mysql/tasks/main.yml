@@ -1,0 +1,13 @@
+--- 
+
+# primary task list for mysql - this is extremely preliminary
+
+ - name: Load software
+   yum: pkg={{ item }} state=installed
+   with_items:
+      - mysql-server
+      - mysql
+      - MySQL-python
+
+ - name: enable the service
+   service: name=mysqld state=started enabled=yes

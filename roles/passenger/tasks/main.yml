@@ -1,0 +1,23 @@
+  - name: Install ruby
+    yum: name=https://github.com/feedforce/ruby-rpm/releases/download/2.1.5/ruby-2.1.5-2.el6.x86_64.rpm state=present
+
+  - name: Install passenger gem
+    gem: name=passenger version={{ version }} user_install=no
+
+  - name: Install prerequisite software
+    yum: pkg={{ item}} state=latest
+    with_items:
+      - libcurl-devel 
+      - httpd-devel 
+      - apr-devel
+      - apr-util-devel
+      - openssl-devel
+
+  - name: install passenger_mod
+    command:  passenger-install-apache2-module --auto --languages ruby
+
+  - name: config passenger_mod
+    template: src=passenger.conf.j2 dest=/etc/httpd/conf.d/passenger.conf
+
+  - name: give permissions to gems dir -- is there a better way?
+    file: path={{ gemdir }} state=directory mode=775

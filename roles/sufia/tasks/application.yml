@@ -1,0 +1,25 @@
+---
+
+  - name: Install development only software
+    yum: pkg={{ item }} state=latest
+    with_items:
+      - git
+      - '@development'
+      - patch
+      - mysql-devel
+      - zlib-devel
+
+  - name: pull current master branch from GitHub
+    git: repo=https://github.com/ualbertalib/hydranorth.git dest={{ APP_PATH }}
+
+  - name: bundle install required gems
+    command: chdir={{ APP_PATH }} bundle install
+
+  - name: make sure tmp exists
+    file: path={{ APP_PATH }}/tmp state=directory
+
+  - name: config development environs
+    template: src=development.rb.j2 dest={{ APP_PATH }}/config/environments/development.rb 
+
+  - include: hydra-jetty.yml
+    tags: "jetty"

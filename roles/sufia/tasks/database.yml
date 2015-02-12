@@ -1,0 +1,8 @@
+---
+
+  - name: apply template database.yml.j2
+    template: src="database.yml.j2" dest={{ APP_PATH }}/config/database.yml  mode=0640 # DB credentials found here
+
+  - name: setup the db
+    shell: chdir={{ APP_PATH }} bundle exec rake db:setup
+

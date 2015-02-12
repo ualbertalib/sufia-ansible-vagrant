@@ -1,0 +1,47 @@
+  - name: install software
+    yum: pkg={{ item}} state=latest
+    with_items: 
+      - make
+      - tcl
+
+  - name: redis status
+    service: name=redis_6379 state=started pattern=redis
+    register: isRedisStarted
+    ignore_errors: True
+
+  - name: unpack redis 
+    unarchive: src=redis-stable.tar.gz dest=/usr/src/ 
+
+  - name: make redis 
+    command: chdir=/usr/src/redis-stable make
+    when: isRedisStarted|failed
+
+  - name: test redis
+    command: chdir=/usr/src/redis-stable make test
+    when: isRedisStarted|failed
+
+  - name: move server and client
+    command: chdir=/usr/src/redis-stable cp src/{{ item }} /usr/bin 
+    with_items:
+      - redis-server
+      - redis-cli
+    when: isRedisStarted|failed
+
+  - name: make necessary directories
+    file: state=directory path={{ item }} 
+    with_items:
+      - /etc/redis
+      - /var/redis 
+      - /var/redis/6379
+    when: isRedisStarted|failed
+
+  - name: copy init script
+    copy: src=redis_init_script dest=/etc/rc.d/init.d/redis_6379 mode=0755
+    when: isRedisStarted|failed
+
+  - name: copy config file
+    copy: src=redis.conf dest=/etc/redis/6379.conf
+    when: isRedisStarted|failed
+
+  - name: restart redis
+    service: name=redis_6379 state=restarted enabled=yes 

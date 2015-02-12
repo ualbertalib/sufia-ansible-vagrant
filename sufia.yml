@@ -1,0 +1,20 @@
+---
+
+# map hostnames to roles
+  - name: setup sufia server play
+    hosts: all 
+    vars: 
+      APP_PATH: /var/www/html/sufia
+      APP_NAME: sufia
+      APP_EMAIL: sufia@example.com
+      rails_env: development
+    roles: 
+     - mysql
+     - fits
+     - redis
+     - resque
+     - sufia   
+    remote_user: root
+    sudo: no
+    post_tasks:
+      - include: roles/sufia/tasks/test.yml tags=test

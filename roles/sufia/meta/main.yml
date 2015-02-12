@@ -1,0 +1,6 @@
+
+# this is a list of the roles that the HydraNorth rails app depends upon 
+dependencies:
+ - { role: phantomjs, tags: ['phantomjs'] }
+ - { role: ffmpeg, tags: ['ffmpeg'] }
+ - { role: passenger, tags: ['passenger'] }

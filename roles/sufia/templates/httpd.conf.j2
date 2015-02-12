@@ -1,0 +1,14 @@
+#This is based on the assumption of using Phusion Passenger as our primary Rails server.
+
+PassengerAppEnv {{ rails_env }}
+RailsEnv {{ rails_env }}
+
+   <VirtualHost *:80>
+      PassengerEnabled On
+      DocumentRoot {{ APP_PATH }}/public
+
+      <Directory {{ APP_PATH }}/public>
+         AllowOverride all
+         Options -MultiViews
+      </Directory>
+   </VirtualHost>

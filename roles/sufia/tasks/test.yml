@@ -1,0 +1,33 @@
+  - name: test redis ping
+    command: redis-cli ping
+    register: command_result
+    failed_when: command_result.stdout != "PONG"
+
+  - name: test redis save
+    command: redis-cli save 
+    register: command_result
+    failed_when: command_result.stdout != "OK"
+
+  - name: confirm FITS
+    command: fits
+    register: command_result
+    failed_when: '"Invalid CLI options" not in command_result.stderr' 
+
+  - name: confirm ffmpeg
+    command: ffmpeg
+    register: command_result
+    failed_when: '"Hyper fast Audio and Video encoder" not in command_result.stderr'
+
+  - name: confirm phantomjs
+    command: phantomjs /usr/src/phantomjs-1.9.8-linux-x86_64/examples/hello.js
+    register: command_result
+    failed_when: '"Hello, world!" not in command_result.stdout'
+
+  - name: verify jetty
+    wait_for: port=8983
+
+  - name: verify resque
+    shell: "ps aux | grep [r]esque"
+    register: command_result
+    failed_when: '"Waiting for" not in command_result.stdout'
+

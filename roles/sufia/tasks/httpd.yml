@@ -1,0 +1,11 @@
+
+  - name: give apache ownership of application dir
+    file: state=directory recurse=yes path={{ APP_PATH }} owner=apache group=apache mode=0755 
+
+#  - name: give apache ownership of /tmp
+#    file: state=directory recurse=yes path=/tmp owner=apache group=apache
+
+  - name: copy httpd config
+    template: src=httpd.conf.j2 dest=/etc/httpd/conf.d/sufia.conf owner=root group=root mode=0640
+    notify: restart httpd
+
