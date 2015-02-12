@@ -1,14 +1,17 @@
-=== fits ===
+### fits ###
+
 This software uses code of <a href=http://github.com/harvard-lts/fits>FITS</a> licensed under the <a href=https://github.com/harvard-lts/fits/blob/master/COPYING.LESSER>LGPLv3</a> and <a href="https://github.com/harvard-lts/fits/blob/master/COPYING_APACHE_LICENSE_v2.txt">Apache v2</a>.
 
-=== ffmpeg ===
+### ffmpeg ###
+
 This software uses code of <a href=http://ffmpeg.org>FFmpeg</a> licensed under the <a href=http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html>LGPLv2.1</a>.
 
-=== lame ===
+### lame ###
 
 This software uses <a href=http://www.mp3dev.org>LAME</a>.
 
-=== libogg ===
+### libogg ###
+
 Copyright (c) 2002, Xiph.org Foundation
 
 Redistribution and use in source and binary forms, with or without
@@ -38,7 +41,7 @@ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-=== libvorbis ===
+### libvorbis ###
 
 Copyright (c) 2002-2008 Xiph.org Foundation
 
@@ -69,11 +72,11 @@ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-=== phantomjs ===
+### phantomjs ###
 
 PhantomJS is free software/open source, and is distributed under the BSD license. It contains third-party code, see the included third-party.txt file for the license information on third-party code.
 
-=== redis ===
+### redis ###
 
 Every file in the Redis distribution, with the exceptions of third party files specified in the list below, contain the following license:
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
