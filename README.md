@@ -69,11 +69,12 @@ There are numerous ways to get help.  You can reach the folks who work on Hydra 
 
 ## Digging deeper
 
-You now have a working sandbox to try out Hydra and Sufia, and a perfectly good development environment to boot.  Here's how to dig deeper. Start by connecting to the virtual machine and changing into the directory that contains the sufia-ansible-vagrant code:
+You now have a working sandbox to try out Hydra and Sufia, and a perfectly good development environment to boot.  Here's how to dig deeper. Start by connecting to the virtual machine and changing into the directory that contains the HydraNorth code:
 
 ```bash
 vagrant ssh
-cd /vagrant
+sudo su # become the root user
+cd /var/www/html/sufia
 ```
 
 Once you're connected, you can type `exit` to get out.
