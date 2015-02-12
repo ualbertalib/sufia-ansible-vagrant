@@ -41,7 +41,9 @@ vagrant up
 
 > ```vagrant up``` will take some time to complete the first time you launch it -- **no, really, maybe grab a cup of coffee and wait for this to complete!** This step downloads the vagrant box, installs system packages, downloads and installs FITS for file characterization, installs the Ruby dependencies, builds a relational database, and starts Fedora Commons, Solr, and Redis.
 
-Finally, browse to ```http://localhost:3000``` and you should see the Sufia homepage, at which point you can sign up for an account, upload some files, and cruise around..
+Finally, browse to ```http://192.168.33.10``` and you should see the Sufia homepage, at which point you can sign up for an account, upload some files, and cruise around..
+
+Visit ```http://192.168.33.10:8983``` and you should see links to Solr and Fedora if you want to browse their admin interfaces.
 
 Note: It may take a few moments for the included Fedora Commons and Solr instances to come online. If you see `Connection refused - Unable to connect to Solr instance`, wait a few moments and reload the page.
 
