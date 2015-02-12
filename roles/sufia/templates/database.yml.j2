@@ -15,10 +15,10 @@ development:
   <<: *default
   database: {{ db_name }}dev 
 
-{{ rails_env }}:
+test:
   <<: *default
   database: {{ db_name }}test
 
-{{ rails_env }}:
+production:
   <<: *default
   database: {{ db_name }}prod
