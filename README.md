@@ -2,7 +2,7 @@
 
 Sufia-vagrant is a turnkey Hydra-based repository application that builds atop Sufia, providing [self-deposit functionality and more](https://github.com/projecthydra/sufia#what-is-sufia). It runs in a virtual machine powered by Vagrant and VirtualBox.
 
-This playbook installs (HydraNorth)[https://github.com/ualbertalib/HydraNorth] but can be replaced by any Hydra-based application.  Consider starting your own using the instructions in the (Sufia README)[https://github.com/projecthydra/sufia]
+This playbook installs [HydraNorth](https://github.com/ualbertalib/HydraNorth) but can be replaced by any Hydra-based application.  Consider starting your own using the instructions in the [Sufia README](https://github.com/projecthydra/sufia)
 
 ## Getting Started
 
