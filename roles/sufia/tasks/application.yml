@@ -8,6 +8,7 @@
       - patch
       - mysql-devel
       - zlib-devel
+      - clamav-devel
 
   - name: pull current master branch from GitHub
     git: repo=https://github.com/ualbertalib/hydranorth.git dest={{ APP_PATH }}
